@@ -1,0 +1,272 @@
+/* Nomalizacion */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Para que el tamaño de los elementos sean independientes de la ventana */
+    font-family: "Inconsolata", monospace; /* Fuente de tipografía */
+    list-style: none; /* Eliminado los puntos de la lista */
+    text-decoration: none; /* Borrado el subrayado */
+    color: white; /* Color de fuente */
+}
+
+body { 
+    background-color: #1e1e1e;   /*TODO: borrar cuando se tenga el fondo*/
+}
+
+header {
+    position: fixed; /* Fija el header en la parte superior de la página */
+    right: 0;
+    top: 0;
+    z-index: 100; /* Para que se vea sobre el contenido */
+    width: 100%;
+    display: flex; /* Para que se vean los elemento en linea */
+    align-items: center; /* Alineación vertical */
+    justify-content: space-between;  /* Alineación horizontal */
+    padding: 15px 3%;
+    background-color: transparent;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.nav-list {
+    display: flex; /* Para que se vean los elemento en linea */
+}
+
+.nav-list a {
+    margin-left: 70px; /* Separar las Palabras */
+    font-size: 18px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent; /* Subrayado transparente */
+    transition: all 0.3s ease; /* Animación de transición */
+}
+
+.nav-list a:hover {
+    border-bottom: 2px solid white; /* Subrayado blanco */
+}
+
+ #menu-icon {
+    display: none; /* se vera cuando la pagina este colapsada (en celular)  */
+} 
+
+#menu-icon {
+    font-size: 35px;
+    z-index: 101;
+    cursor: pointer; /* Para que la mano aparezca */
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-icon-acction {
+    display: none; /*Para que no se le haga clicl*/
+}
+
+.hero {
+    height: 100%; 
+    width: 100%; 
+    min-height: 100vh; 
+    background: linear-gradient(245.59deg, #00BCD4 0%, #FF7043 25%, #00796B 75%); /* Gradiente */
+    position: relative; /* Para que se puedan posicionar los elementos */
+    display: grid; /* Para que se vean los elementos en una linea */
+    grid-template-columns: 1fr 1fr; /* Para que se vean los elementos en dos columnas */
+    align-items: center; /* Alineación vertical */
+    gap: 2rem; /* Separación entre los elementos */
+}
+
+section {
+    padding: 0 8%;
+
+}
+
+.hero-text h5 {
+    font-size: 14px;
+    font-weight: 400;   
+    margin-bottom: 25px;
+}
+
+.hero-text h1 {
+    font-family: "Rubik Mono One", monospace;
+    font-size: 30px;
+    line-height: 1;   
+    margin-bottom: 0 0 30px;
+}
+
+.hero-text h4 {
+    font-size: 18px;
+    font-weight: 600;   
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+
+.hero-img img {
+    width: 400px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    transition: all 2s linear; /* Animación lineal */
+}
+
+.hero-img img:hover {
+    width: 450px;
+    opacity: 0.6;
+}
+
+.hero-text a {
+    display: inline-block; /*ancho y alto*/
+    background-color: #FF7043; 
+    border: 1px solid transparent; 
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.hero-text a:hover {
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(6px);
+}
+
+.hero-text a.videos {
+    background-color: transparent;
+    border: 1px solid white;
+    margin-left: 20px;
+}
+
+.hero-text a.videos i {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.icons {
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i {
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.icons i:hover {
+    color: #FF7043;
+    transform: translateY(-5px);
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.scroll-down i {
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #00BCD4;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.scroll-down i:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 1231px) {
+    section{
+        padding: 0 3%;
+        transition: 0.2s;
+
+    }
+
+    .hero-text{
+        padding-top: 0;
+    }
+
+    .hero-img{
+        text-align: center;
+    }
+
+    .hero-img img{
+        width: 80%;
+        margin: 10% 0 0 10%;
+    }
+
+    .hero-text p{
+        font-size: 70%;
+    }
+
+    .icons{
+        display: none;
+    }
+
+    .scroll-down{
+        display: none;
+    }
+}                 
+
+@media (max-width: 768px){
+
+    .meni-icon-action{
+        display: block;
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img img {
+        margin: 0;
+    }
+
+    .hero {
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .nav-list{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #00BCD4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .1s ease-out;
+    }
+
+    .nav-list a {
+        display: block;
+        margin: 7px 0;
+    }   
+
+    #menu-toggle:checked + label.menu-icon-action + ul{
+        right: 0;
+    }
+
+}
